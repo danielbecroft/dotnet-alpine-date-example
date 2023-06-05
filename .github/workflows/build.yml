@@ -9,5 +9,6 @@ jobs:
         DOTNET_SYSTEM_GLOBALIZATION_INVARIANT: "false"
         LC_ALL: en_AU.UTF-8
         LANG: en_AU.UTF-8
+    runs-on: ubuntu-latest
     steps:
       - run: dotnet run
