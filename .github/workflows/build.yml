@@ -1,0 +1,13 @@
+name: 7.0-alpine
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: [push]
+jobs:
+  build:
+    container:
+      image: mcr.microsoft.com/dotnet/sdk:7.0-alpine
+      env:
+        DOTNET_SYSTEM_GLOBALIZATION_INVARIANT: "false"
+        LC_ALL: en_AU.UTF-8
+        LANG: en_AU.UTF-8
+    steps:
+      - run: dotnet run
