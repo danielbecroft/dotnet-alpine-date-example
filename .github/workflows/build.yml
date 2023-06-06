@@ -1,9 +1,9 @@
-name: 7.0-alpine
+name: Build
 on: [push]
 jobs:
-  build:
+  build-6.0.301-alpine3.14:
     container:
-      image: mcr.microsoft.com/dotnet/sdk:7.0-alpine
+      image: mcr.microsoft.com/dotnet/sdk:6.0.301-alpine3.14
       env:
         DOTNET_SYSTEM_GLOBALIZATION_INVARIANT: "false"
         LC_ALL: en_AU.UTF-8
@@ -12,8 +12,61 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
-    - name: Test
-      run: dotnet run --no-build
+    - name: Run
+      run: dotnet run
+
+  build-6.0.301-alpine3.15:
+    container:
+      image: mcr.microsoft.com/dotnet/sdk:6.0.301-alpine3.15
+      env:
+        DOTNET_SYSTEM_GLOBALIZATION_INVARIANT: "false"
+        LC_ALL: en_AU.UTF-8
+        LANG: en_AU.UTF-8
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Restore dependencies
+    - name: Run
+      run: dotnet run
+
+  build-6.0.301-alpine3.16:
+    container:
+      image: mcr.microsoft.com/dotnet/sdk:6.0.301-alpine3.16
+      env:
+        DOTNET_SYSTEM_GLOBALIZATION_INVARIANT: "false"
+        LC_ALL: en_AU.UTF-8
+        LANG: en_AU.UTF-8
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Restore dependencies
+    - name: Run
+      run: dotnet run
+
+  build-6.0.302-alpine3.15:
+    container:
+      image: mcr.microsoft.com/dotnet/sdk:6.0.302-alpine3.15
+      env:
+        DOTNET_SYSTEM_GLOBALIZATION_INVARIANT: "false"
+        LC_ALL: en_AU.UTF-8
+        LANG: en_AU.UTF-8
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Restore dependencies
+    - name: Run
+      run: dotnet run
+
+  build-6.0.302-alpine3.16:
+    container:
+      image: mcr.microsoft.com/dotnet/sdk:6.0.302-alpine3.16
+      env:
+        DOTNET_SYSTEM_GLOBALIZATION_INVARIANT: "false"
+        LC_ALL: en_AU.UTF-8
+        LANG: en_AU.UTF-8
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Restore dependencies
+    - name: Run
+      run: dotnet run
